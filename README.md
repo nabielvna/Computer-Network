@@ -2,8 +2,8 @@
 
 ## About this repository
 Subject: Computer Network / 4 Credit points  
-Major: Computer Science  
 Lecturer: Hudan Studiawan, S.Kom., M.Kom., Ph.D.  
+Major: Computer Science  
 Institution: Institut Teknologi Sepuluh Nopember Surabaya
 
 ## Note
