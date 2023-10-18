@@ -19,9 +19,9 @@
 **Soal**  
 Yudhistira akan digunakan sebagai DNS Master, Werkudara sebagai DNS Slave, Arjuna merupakan Load Balancer yang terdiri dari beberapa Web Server yaitu Prabakusuma, Abimanyu, dan Wisanggeni.
 </br></br>Berikut adalah topologi yang diminta kepada kelompok E04
-![Topologi 1](https://github.com/nabielvna/E04-Praktikum-Jarkom-Modul-2/blob/main/Assets/Topologi%201.png?raw=true)
+![Topologi 1](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/2nd-Module/Assets/Topologi%201.png?raw=true)
 </br></br>Berikut adalah hasil yang kami buat  
-![1](https://github.com/nabielvna/E04-Praktikum-Jarkom-Modul-2/blob/main/Assets/1.png?raw=true)
+![1](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/2nd-Module/Assets/1.png?raw=true)
 #### Step:  
 Buka console Yudhistira, buat domainnya dengan nama sesuai node nya “yudhistira.com”:
 ```
@@ -53,11 +53,11 @@ Kemudian buka filenya
 nano yudhistira/yudhistira.com
 ```
 Edit konfigurasinya menjadi seperti ini:
-![2](https://github.com/nabielvna/E04-Praktikum-Jarkom-Modul-2/blob/main/Assets/2.png?raw=true)
+![2](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/2nd-Module/Assets/2.png?raw=true)
 Kemudian lakukan ping dari node mana saja ke Node Yudhistira dengan mengarahkan node tersebut ke IP Node Yudhistira)
 
 Selanjutnya, jadikan Yudhistira sebagai DNS Master dengan mengedit kembali konfigurasi pada named.conf.local:
-![3](https://github.com/nabielvna/E04-Praktikum-Jarkom-Modul-2/blob/main/Assets/3.png?raw=true)
+![3](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/2nd-Module/Assets/3.png?raw=true)
 
 </br> Restart bind9
 ```
@@ -75,7 +75,7 @@ Kemudian akses named.conf.local dengan:
 nano named.conf.local
 ```
 Edit konfigurasinya dengan menambahkan:
-![4](https://github.com/nabielvna/E04-Praktikum-Jarkom-Modul-2/blob/main/Assets/4.png?raw=true)
+![4](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/2nd-Module/Assets/4.png?raw=true)
 Restart bind9
 ```
 service bind9 restart
@@ -99,7 +99,7 @@ Kemudian akses named.conf.local dengan:
 nano named.conf.local
 ```
 Edit konfigurasinya dengan menambahkan:
-![5](https://github.com/nabielvna/E04-Praktikum-Jarkom-Modul-2/blob/main/Assets/5.png?raw=true)
+![5](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/2nd-Module/Assets/5.png?raw=true)
 
 Buat folder arjuna
 ```
@@ -115,7 +115,7 @@ nano arjuna/arjuna.e04.com
 ```
 Edit konfigurasinya dengan menambahkan:
 (anggap kita belum memberi www)
-![6](https://github.com/nabielvna/E04-Praktikum-Jarkom-Modul-2/blob/main/Assets/6.png?raw=true)
+![6](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/2nd-Module/Assets/6.png?raw=true)
 
 Buka konsol pada Yudhistira:
 ```
@@ -176,7 +176,7 @@ Buka file
 nano abimanyu/abimanyu.e04.com
 ```
 Edit konfigurasi menjadi seperti di bawah ini:
-![7](https://github.com/nabielvna/E04-Praktikum-Jarkom-Modul-2/blob/main/Assets/7.png?raw=true)
+![7](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/2nd-Module/Assets/7.png?raw=true)
 Restart bind9
 ```
 service bind9 restart
@@ -197,7 +197,7 @@ Buka konsol Yudhistira
 nano /etc/bind/yudhistira/yudhistira.com
 ```
 Edit konfigurasi menjadi seperti di bawah ini:
-![8](https://github.com/nabielvna/E04-Praktikum-Jarkom-Modul-2/blob/main/Assets/8.png?raw=true)
+![8](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/2nd-Module/Assets/8.png?raw=true)
 Restart bind9
 ```
 service bind9 restart
@@ -214,7 +214,7 @@ nano named.conf.local
 ```
 
 Tambahkan syntax sebagai berikut: 
-![9](https://github.com/nabielvna/E04-Praktikum-Jarkom-Modul-2/blob/main/Assets/9.png?raw=true)
+![9](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/2nd-Module/Assets/9.png?raw=true)
 ```
 cp db.local yudhistira/3.208.192.in-addr.arpa
 ```
@@ -222,7 +222,7 @@ cp db.local yudhistira/3.208.192.in-addr.arpa
 nano named.conf.local
 ```
 Edit konfigurasi sehingga menjadi seperti di bawah ini:
-![10](https://github.com/nabielvna/E04-Praktikum-Jarkom-Modul-2/blob/main/Assets/10.png?raw=true)
+![10](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/2nd-Module/Assets/10.png?raw=true)
 Restart bind9
 ```
 service bind9 restart
@@ -239,7 +239,7 @@ nano named.conf.local
 ```
 
 Edit konfigurasi menjadi seperti di bawah ini:
-![11](https://github.com/nabielvna/E04-Praktikum-Jarkom-Modul-2/blob/main/Assets/11.png?raw=true)
+![11](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/2nd-Module/Assets/11.png?raw=true)
 Restart bind9
 ```
 service bind9 restart
@@ -255,7 +255,7 @@ apt-get install bind9 -y
 nano named.conf.local
 ```
 Tambahkan syntax seperti di bawah ini:
-![12](https://github.com/nabielvna/E04-Praktikum-Jarkom-Modul-2/blob/main/Assets/12.png?raw=true)
+![12](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/2nd-Module/Assets/12.png?raw=true)
 
 Yudhistira
 ```
@@ -271,7 +271,7 @@ apt-get install bind9 -y
 nano named.conf.local
 ```
 Tambahkan syntax seperti di bawah ini:
-![13](https://github.com/nabielvna/E04-Praktikum-Jarkom-Modul-2/blob/main/Assets/13.png?raw=true)
+![13](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/2nd-Module/Assets/13.png?raw=true)
 Werkudara
 ```
 service bind9 restart
@@ -283,7 +283,7 @@ Buka konsol Nakula
 nano /etc/resolv.conf
 ```
 Arahkan ke dua IP tersebut:
-![14](https://github.com/nabielvna/E04-Praktikum-Jarkom-Modul-2/blob/main/Assets/14.png?raw=true)
+![14](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/2nd-Module/Assets/14.png?raw=true)
 
 Matikan bind9 pada Yudhistira
 ```
@@ -293,4 +293,4 @@ Buka konsol Nakula
 ```
 ping abimanyu.e04.com
 ```
-![16](https://github.com/nabielvna/E04-Praktikum-Jarkom-Modul-2/blob/main/Assets/16.png?raw=true)
+![15](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/2nd-Module/Assets/15.png?raw=true)
