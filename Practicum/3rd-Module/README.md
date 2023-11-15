@@ -8,16 +8,18 @@
 ### Prefix IP: 192.208
 
 ## Daftar Isi
-
-0. [Topologi](#0.-topologi)
-1. [Pembuatan Domain](#1.-pembuatan-domain)
-2. [DHCP](#2.-dhcp)
+1. [Topologi](#1.-topologi)
+2. [Pembuatan Domain](#2.-pembuatan-domain)
+3. [DHCP](#3.-dhcp)
+   - [DHCP Server](#2.1-himmel-(dhcp-server))
+   - [DHCP Relay](#2.2-Aura-(dhcp-relay))
+   - [Client DHCP](#2.3-client-dhcp)
 
 # Praktikum
-### 0. Topologi
+### 1. Topologi
 ![Topologi](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/Topologi.png?raw=true)
 
-### 1. Pembuatan Domain
+### 2. Pembuatan Domain
 riegel.canyon.yyy.com untuk `worker Laravel` </br>
 granz.channel.yyy.com untuk `worker PHP` </br>
 mengarah pada worker yang memiliki IP `[prefix IP].x.1.` 
@@ -93,8 +95,8 @@ ping granz.channel.e04.com
 ```
 ![ping granz](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/ping%20granz.png?raw=true)
 
-### 2. DHCP
-#### 2.1 Himmel (DHCP Server)
+### 3. DHCP
+#### 3.1 Himmel (DHCP Server)
 ```
 echo nameserver 192.168.122.1 > /etc/resolv.conf
 apt-get update
@@ -148,7 +150,7 @@ subnet 192.208.4.0  netmask 255.255.255.0 {
 service isc-dhcp-server restart
 ```
 
-#### 2.2 Aura (DHCP Relay)
+#### 3.2 Aura (DHCP Relay)
 ```
 apt-get update
 apt-get install isc-dhcp-relay -y
@@ -180,7 +182,7 @@ net.ipv4.ip_forward=1
 service isc-dhcp-relay restart
 ```
 
-#### 2.3 Client DHCP
+#### 3.3 Client DHCP
 Ubah konfigurasi interface client
 ```
 nano /etc/network/interfaces
