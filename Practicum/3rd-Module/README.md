@@ -100,7 +100,7 @@ ping granz.channel.e04.com
 ### 2. DHCP
 #### 2.1 Himmel (DHCP Server)
 ```
-echo nameserver 192.168.122.1 > /etc/resolv/conf
+echo nameserver 192.168.122.1 > /etc/resolv.conf
 apt-get update
 apt-get install isc-dhcp-server -y
 ```
@@ -194,6 +194,7 @@ Kemudian isi dengan
 auto eth0
 iface eth0 inet dhcp
 ```
+
 Foto "Konfigurasi client DHCP"
 
 </br> Restart `client dhcp`
