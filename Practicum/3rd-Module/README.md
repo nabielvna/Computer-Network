@@ -12,10 +12,6 @@
 0. [Topologi](#0.-topologi)
 1. [Pembuatan Domain](#1.-pembuatan-domain)
 2. [DHCP](#2.-dhcp)
-   - [DHCP Server](#2.1-himmel-(dhcp-server))
-   - [DHCP Relay](#2.2-Aura-(dhcp-relay))
-   - [Client DHCP](#2.3-client-dhcp)
-3. 
 
 # Praktikum
 ### 0. Topologi
