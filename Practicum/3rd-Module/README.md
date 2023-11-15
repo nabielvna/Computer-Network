@@ -9,18 +9,15 @@
 
 ## Daftar Isi
 
-1. [Topologi](#topologi)
-2. [Pembuatan Domain](#pembuatan-domain)
-3. [Konfigurasi Abimanyu](#soal-3)
-4. [Parikesit Abimanyu](#soal-4)
-5. [Reverse Domain Abimanyu](#soal-5)
-6. [Werkudara DNS Slave](#soal-6)
+0. [Topologi](#0.-topologi)
+1. [Pembuatan Domain](#1.-pembuatan-domain)
+2. [DHCP](#2.-dhcp)
 
 # Praktikum
-### Topologi
+### 0. Topologi
 ![Topologi](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/Topologi.png?raw=true)
 
-### Pembuatan Domain
+### 1. Pembuatan Domain
 riegel.canyon.yyy.com untuk `worker Laravel` </br>
 granz.channel.yyy.com untuk `worker PHP` </br>
 mengarah pada worker yang memiliki IP `[prefix IP].x.1.` 
@@ -46,7 +43,7 @@ zone "channel.e04.com" {
 	file "/etc/bind/channel/channel.e04.com";
 };
 ```
-FOTO "Konfigurasi domain"
+![Konfigurasi domain](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/Konfigurasi%20domain.png?raw=true)
 
 Kemudian buat direktori dan copy ke `db.local`
 ```
@@ -60,13 +57,13 @@ Edit konfigurasi canyon
 ```
 nano /etc/bind/canyon/canyon.e04.com
 ```
-FOTO "Konfigurasi canyon"
+![Konfigurasi canyon](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/Konfigurasi%20canyon.png?raw=true)
 
 Edit konfigurasi channel
 ```
 nano /etc/bind/channel/channel.e04.com
 ```
-FOTO "Konfigurasi channel"
+![Konfigurasi channel](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/Konfigurasi%20channel.png?raw=true)
 
 Restart bind9
 ```
@@ -82,16 +79,18 @@ ping domain dan sub domain
 ```
 ping canyon.e04.com
 ```
-FOTO "ping canyon"
+![ping canyon](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/ping%20canyon.png?raw=true)
 ```
 ping channel.e04.com
 ```
-FOTO "ping channel"
+![ping channel](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/ping%20channel.png?raw=true)
 ```
 ping riegel.canyon.e04.com 
 ```
-FOTO "ping riegel"
+![ping riegel](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/ping%20riegel.png?raw=true)
 ```
 ping granz.channel.e04.com
 ```
-FOTO "ping granz"
+![ping granz](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/ping%20granz.png?raw=true)
+
+### 2. DHCP
