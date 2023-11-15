@@ -26,7 +26,7 @@ mengarah pada worker yang memiliki IP `[prefix IP].x.1.`
 
 <b>Heiter (DNS Server):</b>
 ```
-apt-get update </br>
+apt-get update
 apt-get install bind9 -y
 ```
 
