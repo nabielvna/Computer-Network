@@ -11,9 +11,9 @@
 1. [Topologi](#1.-topologi)
 2. [Pembuatan Domain](#2.-pembuatan-domain)
 3. [DHCP](#3.-dhcp)
-   - [DHCP Server](#2.1-himmel-(dhcp-server))
-   - [DHCP Relay](#2.2-Aura-(dhcp-relay))
-   - [Client DHCP](#2.3-client-dhcp)
+   - [DHCP Server](#3.1-dhcp-server)
+   - [DHCP Relay](#3.2-dhcp-relay)
+   - [Client DHCP](#3.3-client-dhcp)
 
 # Praktikum
 ### 1. Topologi
@@ -96,7 +96,7 @@ ping granz.channel.e04.com
 ![ping granz](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/ping%20granz.png?raw=true)
 
 ### 3. DHCP
-#### 3.1 Himmel (DHCP Server)
+#### 3.1 DHCP Server
 ```
 echo nameserver 192.168.122.1 > /etc/resolv.conf
 apt-get update
@@ -150,7 +150,7 @@ subnet 192.208.4.0  netmask 255.255.255.0 {
 service isc-dhcp-server restart
 ```
 
-#### 3.2 Aura (DHCP Relay)
+#### 3.2 DHCP Relay
 ```
 apt-get update
 apt-get install isc-dhcp-relay -y
