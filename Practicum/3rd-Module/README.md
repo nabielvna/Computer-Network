@@ -111,7 +111,7 @@ nano /etc/default/isc-dhcp-server
 ```
 INTERFACESv4="eth0"
 ```
-FOTO "dhcp server interface"
+![DHCP Interface](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/DHCP%20Server%20interface.png?raw=true)
 
 </br> Konfigurasi `DHCP Server`
 ```
@@ -151,6 +151,7 @@ subnet 192.208.4.0  netmask 255.255.255.0 {
 ```
 service isc-dhcp-server restart
 ```
+![1](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/Konfigurasi%20dhcp%20server%201.png?raw=true)![2](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/Konfigurasi%20dhcp%20server%202.png?raw=true)![3](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/Konfigurasi%20dhcp%20server%203.png?raw=true)
 
 #### 2.2 Aura (DHCP Relay)
 ```
