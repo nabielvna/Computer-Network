@@ -151,7 +151,6 @@ subnet 192.208.4.0  netmask 255.255.255.0 {
 ```
 service isc-dhcp-server restart
 ```
-![1](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/Konfigurasi%20dhcp%20server%201.png?raw=true)![2](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/Konfigurasi%20dhcp%20server%202.png?raw=true)![3](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/Konfigurasi%20dhcp%20server%203.png?raw=true)
 
 #### 2.2 Aura (DHCP Relay)
 ```
@@ -168,7 +167,7 @@ SERVERS="192.208.1.1"
 INTERFACES="eth1 eth2 eth3 eth4"
 OPTIONS=
 ```
-FOTO "Konfigurasi DHCP Relay"
+![Konfigursi dhcp relay](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/Konfigurasi%20dhcp%20relay.png?raw=true)
 
 </br> Lakukan konfigurasi IP Forwarding
 ```
@@ -178,7 +177,7 @@ Kemudian isi dengan
 ```
 net.ipv4.ip_forward=1
 ```
-FOTO "IP Forwarding DHCP Relay"
+![ip forwarding](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/IP%20forwarding%20dhcp%20relay.png?raw=true)
 
 </br> Restart `DHCP Relay`
 ```
@@ -195,11 +194,10 @@ Kemudian isi dengan
 auto eth0
 iface eth0 inet dhcp
 ```
-
-Foto "Konfigurasi client DHCP"
+![konfigurasi client dhcp](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/Konfigurasi%20client%20dhcp.png?raw=true)
 
 </br> Restart `client dhcp`
 </br> Dengan cara `GNS3 → klik kanan pada client DHCP → klik Stop → klik kanan kembali pada client DHCP → klik Start`
 
 </br> Cek apakah client mendapatkan IP yang sesuai
-Foto "IP client DHCP"
+![berhasil](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/client%20dhcp%20berhasil.png)
