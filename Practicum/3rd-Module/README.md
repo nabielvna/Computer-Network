@@ -8,12 +8,12 @@
 ### Prefix IP: 192.208
 
 ## Daftar Isi
-1. [Topologi](#1.-topologi)
-2. [Pembuatan Domain](#2.-pembuatan-domain)
-3. [DHCP](#3.-dhcp)
-   - [DHCP Server](#3.1-dhcp-server)
-   - [DHCP Relay](#3.2-dhcp-relay)
-   - [Client DHCP](#3.3-client-dhcp)
+1. [Topologi](#1-topologi)
+2. [Pembuatan Domain](#2-pembuatan-domain)
+3. [DHCP](#3-dhcp)
+   - [DHCP Server](#31-dhcp-server)
+   - [DHCP Relay](#32-dhcp-relay)
+   - [Client DHCP](#33-client-dhcp)
 
 # Praktikum
 ### 1. Topologi
