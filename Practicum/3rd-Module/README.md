@@ -7,19 +7,11 @@
 
 ### Prefix IP: 192.208
 
-## Daftar Isi
-1. [Topologi](#1-topologi)
-2. [Pembuatan Domain](#2-pembuatan-domain)
-3. [DHCP](#3-dhcp)
-   - [DHCP Server](#31-dhcp-server)
-   - [DHCP Relay](#32-dhcp-relay)
-   - [Client DHCP](#33-client-dhcp)
-
 # Praktikum
-### 1. Topologi
+#### 0. Setelah mengalahkan Demon King, perjalanan berlanjut. Kali ini, kalian diminta untuk melakukan register domain berupa riegel.canyon.yyy.com untuk worker Laravel dan granz.channel.yyy.com untuk worker PHP mengarah pada worker yang memiliki IP [prefix IP].x.1.
+  ### Solve: 
 ![Topologi](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/Topologi.png?raw=true)
 
-### 2. Pembuatan Domain
 riegel.canyon.yyy.com untuk `worker Laravel` </br>
 granz.channel.yyy.com untuk `worker PHP` </br>
 mengarah pada worker yang memiliki IP `[prefix IP].x.1.` 
@@ -95,8 +87,19 @@ ping granz.channel.e04.com
 ```
 ![ping granz](https://github.com/nabielvna/Computer-Network/blob/main/Practicum/3rd-Module/Asset/ping%20granz.png?raw=true)
 
-### 3. DHCP
-#### 3.1 DHCP Server
+#### 1. Lakukan konfigurasi sesuai dengan peta yang sudah diberikan.
+   ### Solve:
+   Konfigurasi alamat-alamat IP Static pada node Himmel, Heiter, Denken, Eisen, Frieren, Flamme, Fern, Lawine, Linie, dan Lugner
+![Screenshot 2023-11-20 111435](https://github.com/nabielvna/Computer-Network/assets/121499055/309ad726-83e1-4191-ab5f-91ca3214916f)
+Ulangi langkah tersebut pada node-node lainnya yang memerlukan IP Static.
+
+#### 2. Client yang melalui Switch3 mendapatkan range IP dari [prefix IP].3.16 - [prefix IP].3.32 dan [prefix IP].3.64 - [prefix IP].3.80
+#### 3. Client yang melalui Switch4 mendapatkan range IP dari [prefix IP].4.12 - [prefix IP].4.20 dan [prefix IP].4.160 - [prefix IP].4.168
+#### 4. Client mendapatkan DNS dari Heiter dan dapat terhubung dengan internet melalui DNS tersebut 
+#### 5. Lama waktu DHCP server meminjamkan alamat IP kepada Client yang melalui Switch3 selama 3 menit sedangkan pada client yang melalui Switch4 selama 12 menit. Dengan waktu maksimal dialokasikan untuk peminjaman alamat IP selama 96 menit
+   ### Solve (2) (3) (4) (5):
+   Buka Himmel sebagai DHCP Server dan konfigurasikan seperti di bawah ini,
+   #### DHCP Server
 ```
 echo nameserver 192.168.122.1 > /etc/resolv.conf
 apt-get update
@@ -130,6 +133,7 @@ subnet 192.208.3.0  netmask 255.255.255.0 {
   option routers 192.208.3.0;
   option broadcast-address 192.208.3.255;
   option domain-name-servers 192.208.1.2;
+  option domain-name "granz.channel.e04.com";
   default-lease-time 180;
   max-lease-time 5760;
 }
@@ -140,6 +144,7 @@ subnet 192.208.4.0  netmask 255.255.255.0 {
   option routers 192.208.4.0;
   option broadcast-address 192.208.4.255;
   option domain-name-servers 192.208.1.2;
+  option domain-name "riegel.canyon.e04.com";
   default-lease-time 720;
   max-lease-time 5760; 
 }
@@ -149,8 +154,8 @@ subnet 192.208.4.0  netmask 255.255.255.0 {
 ```
 service isc-dhcp-server restart
 ```
-
-#### 3.2 DHCP Relay
+Kemudian, setting DHCP Relay agar client dari berbagai ethernet dan DHCP Server dapat saling terkoneksi 
+#### DHCP Relay
 ```
 apt-get update
 apt-get install isc-dhcp-relay -y
@@ -182,7 +187,8 @@ net.ipv4.ip_forward=1
 service isc-dhcp-relay restart
 ```
 
-#### 3.3 Client DHCP
+kemudian, setting DHCP Client agar dapat memiliki protokol dari DHCP
+#### Client DHCP
 Ubah konfigurasi interface client
 ```
 nano /etc/network/interfaces
