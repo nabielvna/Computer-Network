@@ -7,14 +7,6 @@
 
 ### Prefix IP: 192.208
 
-## Daftar Isi
-1. [Topologi](#1-topologi)
-2. [Pembuatan Domain](#2-pembuatan-domain)
-3. [DHCP](#3-dhcp)
-   - [DHCP Server](#31-dhcp-server)
-   - [DHCP Relay](#32-dhcp-relay)
-   - [Client DHCP](#33-client-dhcp)
-
 # Praktikum
 #### 0. Setelah mengalahkan Demon King, perjalanan berlanjut. Kali ini, kalian diminta untuk melakukan register domain berupa riegel.canyon.yyy.com untuk worker Laravel dan granz.channel.yyy.com untuk worker PHP mengarah pada worker yang memiliki IP [prefix IP].x.1.
   ### Solve: 
