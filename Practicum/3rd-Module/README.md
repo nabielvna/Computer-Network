@@ -141,6 +141,7 @@ subnet 192.208.3.0  netmask 255.255.255.0 {
   option routers 192.208.3.0;
   option broadcast-address 192.208.3.255;
   option domain-name-servers 192.208.1.2;
+  option domain-name "granz.channel.e04.com";
   default-lease-time 180;
   max-lease-time 5760;
 }
@@ -151,6 +152,7 @@ subnet 192.208.4.0  netmask 255.255.255.0 {
   option routers 192.208.4.0;
   option broadcast-address 192.208.4.255;
   option domain-name-servers 192.208.1.2;
+  option domain-name "riegel.canyon.e04.com";
   default-lease-time 720;
   max-lease-time 5760; 
 }
